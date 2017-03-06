@@ -1,0 +1,44 @@
+﻿#tipstratgy {
+    height:100%;
+    color:#000000;
+}
+
+.codeHeader {
+    font-size:24px;
+    font-style:italic oblique;
+}
+
+.codeText {
+    font-family:Calibri;
+}
+
+.codeButton {
+  color: #FFFFFF;
+  font-family:main;
+  background-color: #8C41F4;
+  font-size: 20px;
+  text-decoration: none;
+  text-shadow: -1px -1px 1px #616161;
+  position: relative;
+  padding: 10px 20px;
+  -webkit-box-shadow: 5px 5px 0 #8C41F4;
+  -moz-box-shadow: 5px 5px 0 #8C41F4;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  margin: 10px 10px 10px 10px;
+}
+
+.codeButton:hover {
+      -webkit-box-shadow: 0px 0px 0 #8C41F4;
+      -moz-box-shadow: 0px 0px 0 #8C41F4;
+      top: 5px;
+      left: 5px;
+}
+
+div {
+    margin:10px 10px 10px 10px;
+}
+
+#tips {
+    margin: 10px 10px 10px 10px;
+}

@@ -113,8 +113,10 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <Content Include="styles\about.css" />
+    <Content Include="styles\codingbestpractice.css" />
     <Content Include="styles\home.css" />
     <Content Include="styles\master.css" />
+    <Content Include="styles\news.css" />
     <Content Include="SubmitCode.aspx" />
     <Content Include="Web.sitemap">
       <SubType>Designer</SubType>
