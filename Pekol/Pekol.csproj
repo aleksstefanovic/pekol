@@ -97,7 +97,7 @@
     <Content Include="AboutUs.aspx" />
     <Content Include="CodingBestPractice.aspx" />
     <Content Include="Default.aspx" />
-    <Content Include="images\seperator.png" />
+    <Content Include="images\pekeltemp.jpg" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -111,6 +111,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="styles\home.css" />
     <Content Include="styles\master.css" />
     <Content Include="SubmitCode.aspx" />
     <Content Include="Web.sitemap">
@@ -165,6 +166,7 @@
       <DependentUpon>SubmitCode.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

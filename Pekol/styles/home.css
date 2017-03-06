@@ -1,0 +1,14 @@
+﻿#pekelPic {
+    height:50%;
+    width:16%;
+    margin:10px 10px 10px 10px;
+}
+
+#caption {
+    height:10%;
+    width:20%;
+    margin:1px 10px 10px 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:12px;
+    font-style:italic;
+}

@@ -5,12 +5,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link rel="stylesheet" href="styles/master.css" type="text/css" />
-    <title>Title</title>
+    <title>The Pekol Prevention Project</title>
 </head>
 <body>
     <form id="form1" runat="server">
     <div id="header" class="section header">
-        Header Content
+        The Pekol Prevention Project
     </div>
     <asp:Menu runat="server" Orientation="Horizontal" CssClass="nav">
         <LevelMenuItemStyles>
@@ -30,7 +30,7 @@
     </asp:ContentPlaceHolder>
 
     <div id="footer" class="section footer">
-        Footer Content
+        Copyright © The Pekol Prevention Project
     </div>
     </form>
 </body>
