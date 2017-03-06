@@ -18,8 +18,9 @@
         </LevelMenuItemStyles>
         <Items>
             <asp:MenuItem Text="Home | " Value="Home" NavigateUrl="~/Default.aspx"></asp:MenuItem>
-            <asp:MenuItem Text="About Us | " Value="About Us" NavigateUrl="~/AboutUs.aspx"></asp:MenuItem>
-            <asp:MenuItem Text="Coding Best Practices | " Value="Coding Best Practices" NavigateUrl="~/CodingBestPractice.aspx"></asp:MenuItem>
+            <asp:MenuItem Text="About | " Value="About" NavigateUrl="~/AboutUs.aspx"></asp:MenuItem>
+            <asp:MenuItem Text="Tips/Strategies | " Value="Coding Best Practices" NavigateUrl="~/CodingBestPractice.aspx"></asp:MenuItem>
+            <asp:MenuItem Text="News | " Value="News" NavigateUrl="~/News.aspx"></asp:MenuItem>
             <asp:MenuItem Text="Shop" Value="Shop" NavigateUrl="~/Shop.aspx"></asp:MenuItem>
         </Items>
     </asp:Menu>

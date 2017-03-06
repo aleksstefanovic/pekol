@@ -1,14 +1,39 @@
 ﻿#pekelPic {
-    height:50%;
-    width:16%;
-    margin:10px 10px 10px 10px;
+    height:75%;
+    width:100%;
 }
 
 #caption {
-    height:10%;
-    width:20%;
-    margin:1px 10px 10px 10px;
+    height:100%;
+    width:100%;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size:12px;
     font-style:italic;
+}
+
+#leftBody {
+    #border-style:solid;
+    float:left;
+    height:100%;
+    width:20%;
+}
+
+#rightBody {
+    #border-style:solid;
+    float:right;
+    height:100%;
+    width:79%;
+}
+
+#homeTitle {
+    font-size:24px;
+    font-style:oblique;
+}
+
+#homeFooter {
+    font-size:24px;
+}
+#home {
+    height:50%;
+    color:#000000;
 }
