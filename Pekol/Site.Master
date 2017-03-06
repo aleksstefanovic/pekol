@@ -1,0 +1,37 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Pekol.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link rel="stylesheet" href="styles/master.css" type="text/css" />
+    <title>Title</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="header" class="section header">
+        Header Content
+    </div>
+    <asp:Menu runat="server" Orientation="Horizontal" CssClass="nav">
+        <LevelMenuItemStyles>
+            <asp:MenuItemStyle CssClass="navItems" />
+        </LevelMenuItemStyles>
+        <Items>
+            <asp:MenuItem Text="Home | " Value="Home" NavigateUrl="~/Default.aspx"></asp:MenuItem>
+            <asp:MenuItem Text="About Us | " Value="About Us" NavigateUrl="~/AboutUs.aspx"></asp:MenuItem>
+            <asp:MenuItem Text="Coding Best Practices | " Value="Coding Best Practices" NavigateUrl="~/CodingBestPractice.aspx"></asp:MenuItem>
+            <asp:MenuItem Text="Shop" Value="Shop" NavigateUrl="~/Shop.aspx"></asp:MenuItem>
+        </Items>
+    </asp:Menu>
+    <div class="breadcrumb">
+        <asp:SiteMapPath ID="SiteMapPath" runat="server"></asp:SiteMapPath>
+    </div>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <div id="footer" class="section footer">
+        Footer Content
+    </div>
+    </form>
+</body>
+</html>

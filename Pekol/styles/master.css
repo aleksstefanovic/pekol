@@ -1,0 +1,89 @@
+﻿.section {
+    border-style: solid;
+    #border-color: #8C41F4;
+    border-color: #A742F4;
+    border-radius: 15px 50px;
+    margin:30px 30px 10px 10px;
+    padding: 10px 10px 10px 10px;
+    color:#FFFFFF;
+    font-family: main;
+    box-shadow:
+        0 0 0 10px hsl(0, 0%, 80%),
+        0 0 0 15px hsl(0, 0%, 90%);
+}
+
+form {
+    height:100%;
+}
+
+body {
+    height:100%;
+    min-height:100%;
+}
+
+html {
+    height: 100%;
+}
+
+.section.header {
+    background-color: #A742F4;
+}
+
+.section.footer {
+    background-color: #A742F4;
+    text-align: center;
+}
+
+.section.content {
+    height: 75%;
+    color:#000000;
+}
+
+.nav {
+    color:#A742F4 !important;
+    background-color: #A742F4;
+    margin:10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+    font-family: main;
+}
+
+.navItems {
+    color:#FFFFFF !important;
+    font-family: main;
+}
+.navItems:hover {
+    color: transparent;
+    text-shadow: 15px 15px 25px rgba(0,0,0,0.5);
+     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      perspective: 1000px;
+}
+
+.breadcrumb {
+    margin-left:10px;
+    font-family: main;
+}
+
+@font-face {
+    font-family: main;
+    src: url(../fonts/neuropol.ttf);
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-0.5px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(1px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-2px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(2px, 0, 0);
+  }
+}
