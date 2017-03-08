@@ -1,17 +1,11 @@
 ﻿#about {
-    height:75%;
+    height:90%;
     color:#000000;
 }
 
-.aboutHeader {
-    font-size:24px;
-    font-style:italic oblique;
+.linkContactUs {
+    color: #8C41F4;
+    margin:1vw 1vw 1vw 1vw;
+    font-size:2vw;
 }
 
-.aboutText {
-    font-family:Calibri;
-}
-
-div {
-    margin:10px 10px 10px 10px;
-}

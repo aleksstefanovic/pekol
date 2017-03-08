@@ -11,7 +11,7 @@ namespace Pekol
 {
 
 
-    public partial class SubmitCode
+    public partial class ContactUs
     {
     }
 }

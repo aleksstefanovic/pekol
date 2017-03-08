@@ -4,8 +4,8 @@
         <siteMapNode url="~/Default.aspx" title=""  description="Home Page" />
         <siteMapNode url="~/AboutUs.aspx" title="About"  description="About" />
         <siteMapNode url="~/CodingBestPractice.aspx" title="Tips/Strategies"  description="Coding Best Practices" />
-        <siteMapNode url="~/SubmitCode.aspx" title="Submit Code"  description="Check your code for best practices" />
-        <siteMapNode url="~/News.aspx" title="News"  description="The latest Pekol News" />
-        <siteMapNode url="~/Shop.aspx" title="Shop"  description="Shop for Anti-Pekol Items" />
+        <siteMapNode url="~/News.aspx" title="News"  description="The latest Peckol News" />
+        <siteMapNode url="~/Shop.aspx" title="Shop"  description="Shop for Anti-Peckol Items" />
+        <siteMapNode url="~/ContactUs.aspx" title="Contact Us"  description="PPP Contact Info" />
     </siteMapNode>
 </siteMap>

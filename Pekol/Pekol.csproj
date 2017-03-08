@@ -96,8 +96,10 @@
   <ItemGroup>
     <Content Include="AboutUs.aspx" />
     <Content Include="CodingBestPractice.aspx" />
+    <Content Include="ContactUs.aspx" />
     <Content Include="Default.aspx" />
-    <Content Include="images\pekeltemp.jpg" />
+    <Content Include="images\peckol.jpg" />
+    <Content Include="images\pekelSexyTemp.jpg" />
     <Content Include="News.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -114,10 +116,10 @@
     </None>
     <Content Include="styles\about.css" />
     <Content Include="styles\codingbestpractice.css" />
+    <Content Include="styles\contactus.css" />
     <Content Include="styles\home.css" />
     <Content Include="styles\master.css" />
     <Content Include="styles\news.css" />
-    <Content Include="SubmitCode.aspx" />
     <Content Include="Web.sitemap">
       <SubType>Designer</SubType>
     </Content>
@@ -139,6 +141,13 @@
     </Compile>
     <Compile Include="CodingBestPractice.aspx.designer.cs">
       <DependentUpon>CodingBestPractice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -168,13 +177,6 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
-    </Compile>
-    <Compile Include="SubmitCode.aspx.cs">
-      <DependentUpon>SubmitCode.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SubmitCode.aspx.designer.cs">
-      <DependentUpon>SubmitCode.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

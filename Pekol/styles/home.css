@@ -1,5 +1,5 @@
 ﻿#pekelPic {
-    height:75%;
+    height:50%;
     width:100%;
 }
 
@@ -7,7 +7,8 @@
     height:100%;
     width:100%;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size:12px;
+    #font-size:12px;
+    font-size:0.7vw;
     font-style:italic;
 }
 
@@ -15,24 +16,16 @@
     #border-style:solid;
     float:left;
     height:100%;
-    width:20%;
+    width:10%;
 }
 
 #rightBody {
     #border-style:solid;
     float:right;
     height:100%;
-    width:79%;
+    width:89%;
 }
 
-#homeTitle {
-    font-size:24px;
-    font-style:oblique;
-}
-
-#homeFooter {
-    font-size:24px;
-}
 #home {
     height:50%;
     color:#000000;
