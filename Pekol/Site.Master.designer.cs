@@ -22,6 +22,15 @@ namespace Pekol {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// AdRotator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.AdRotator AdRotator;
+        
+        /// <summary>
         /// SiteMapPath control.
         /// </summary>
         /// <remarks>

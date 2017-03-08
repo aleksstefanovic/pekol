@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements xmlns="http://schemas.microsoft.com/AspNet/AdRotator-Schedule-File">
+  <Ad>
+    <ImageUrl>~/images/gloves.png</ImageUrl>
+    <NavigateUrl>http://www.medievalcollectibles.com/p-40255-15th-century-german-style-gauntlets-with-brass.aspx</NavigateUrl>
+    <AlternateText>Have you ever had your fingers broken? Well no more, with authentic medieval knight gauntlets!</AlternateText>
+    <Height>85</Height>
+    <Width>500</Width>
+    <Impressions>100</Impressions>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/csharp.jpg</ImageUrl>
+    <NavigateUrl>https://www.youtube.com/watch?v=DNA-SMurT10</NavigateUrl>
+    <AlternateText>Learn C# in one video!</AlternateText>
+    <Height>85</Height>
+    <Width>500</Width>
+    <Impressions>100</Impressions>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/coffee.jpg</ImageUrl>
+    <NavigateUrl>https://www.amazon.com/Amazon-JK29LP-Starbucks-Doubleshot-Button/dp/B01C3JCWYM</NavigateUrl>
+    <AlternateText>Instant coffee forever!</AlternateText>
+    <Height>85</Height>
+    <Width>300</Width>
+    <Impressions>100</Impressions>
+  </Ad>
+</Advertisements> 

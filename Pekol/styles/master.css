@@ -24,6 +24,11 @@ html {
     height: 100%;
 }
 
+.ads {
+    margin:0.25vw 0.25vw 0.25vw 0.25vw;
+    float:right;
+}
+
 .section.header {
     background-color: #A742F4;
     font-size: 32px;

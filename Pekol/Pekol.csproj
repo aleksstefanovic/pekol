@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AboutUs.aspx" />
+    <Content Include="App_Data\ads.xml" />
     <Content Include="CodingBestPractice.aspx" />
     <Content Include="ContactUs.aspx" />
     <Content Include="Default.aspx" />
