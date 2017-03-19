@@ -9,8 +9,11 @@
 </head>
 <body>
     <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div id="header" class="section header">
         The Peckol Prevention Project
+        <asp:Button ID="LogOut" runat="server" Text="Log Out" CssClass="logOut" OnClick="LogOut_Click"/>
+        <div id="userLabel" runat="server"></div>
     </div>
     <asp:AdRotator ID="AdRotator" runat="server" AdvertisementFile="~/App_Data/ads.xml" CssClass="ads"/>
     <asp:Menu runat="server" Orientation="Horizontal" CssClass="nav">
@@ -21,7 +24,8 @@
             <asp:MenuItem Text="Home | " Value="Home" NavigateUrl="~/Default.aspx"></asp:MenuItem>
             <asp:MenuItem Text="About | " Value="About" NavigateUrl="~/AboutUs.aspx"></asp:MenuItem>
             <asp:MenuItem Text="Tips/Strategies | " Value="Coding Best Practices" NavigateUrl="~/CodingBestPractice.aspx"></asp:MenuItem>
-            <asp:MenuItem Text="News" Value="News" NavigateUrl="~/News.aspx"></asp:MenuItem>
+            <asp:MenuItem Text="News | " Value="News" NavigateUrl="~/News.aspx"></asp:MenuItem>
+            <asp:MenuItem Text="Login" Value="Login" NavigateUrl="~/LogIn.aspx"></asp:MenuItem>
         </Items>
     </asp:Menu>
     <div class="breadcrumb">

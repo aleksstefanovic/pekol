@@ -31,3 +31,4 @@ D:\Data\Projects\Pekol\Pekol\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatf
 D:\Data\Projects\Pekol\Pekol\obj\Debug\Pekol.dll
 D:\Data\Projects\Pekol\Pekol\obj\Debug\Pekol.pdb
 D:\Data\Projects\Pekol\Pekol\obj\Debug\Pekol.csprojResolveAssemblyReference.cache
+D:\Data\Projects\Pekol\Pekol\bin\HashLibrary.pdb

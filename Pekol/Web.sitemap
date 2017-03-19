@@ -7,5 +7,6 @@
         <siteMapNode url="~/News.aspx" title="News"  description="The latest Peckol News" />
         <siteMapNode url="~/Shop.aspx" title="Shop"  description="Shop for Anti-Peckol Items" />
         <siteMapNode url="~/ContactUs.aspx" title="Contact Us"  description="PPP Contact Info" />
+        <siteMapNode url="~/LogIn.aspx" title="Login"  description="Login" />
     </siteMapNode>
 </siteMap>
