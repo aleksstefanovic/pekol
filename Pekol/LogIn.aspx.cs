@@ -44,7 +44,10 @@ namespace Pekol
 
             if (authenticated)
             {
-                FormsAuthentication.RedirectFromLoginPage(Login1.UserName, Login1.RememberMeSet);
+                Login1.Visible = false;
+                CreateUser.Visible = false;
+                UpdatePanelLogin.Update();
+                //FormsAuthentication.RedirectFromLoginPage(Login1.UserName, Login1.RememberMeSet);
             }
         }
 
@@ -155,7 +158,10 @@ namespace Pekol
 
                 if (authenticated)
                 {
-                    FormsAuthentication.RedirectFromLoginPage(Login1.UserName, Login1.RememberMeSet);
+                    Login1.Visible = false;
+                    CreateUser.Visible = false;
+                    UpdatePanelLogin.Update();
+                    //FormsAuthentication.RedirectFromLoginPage(Login1.UserName, Login1.RememberMeSet);
                 }
             }
         }

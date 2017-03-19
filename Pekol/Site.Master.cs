@@ -40,7 +40,10 @@ namespace Pekol
             Application["UserName"] = "";
             Application["Password"] = "";
             Application["LoggedIn"] = false;
-            Response.Redirect(Request.RawUrl);
+            userLabel.Visible = false;
+            LogOut.Visible = false;
+            UpdatePanel1.Update();
+            //Response.Redirect(Request.RawUrl);
         }
     }
 }
