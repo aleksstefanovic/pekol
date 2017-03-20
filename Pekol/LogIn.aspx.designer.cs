@@ -193,6 +193,15 @@ namespace Pekol {
         protected global::System.Web.UI.WebControls.Button saveUser;
         
         /// <summary>
+        /// linkStore control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink linkStore;
+        
+        /// <summary>
         /// regexUserName control.
         /// </summary>
         /// <remarks>

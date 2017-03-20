@@ -37,6 +37,10 @@
             <br />
 
             <asp:Button ID="saveUser" runat="server" Text="Save" OnClick="saveUser_Click"/>
+            <br />
+            <br />
+
+            <asp:HyperLink ID="linkStore" runat="server" NavigateUrl="~/Shop.aspx" CssClass="linkStore">Store</asp:HyperLink>
 
 
             <asp:RegularExpressionValidator ID="regexUserName" runat="server" ErrorMessage="RegularExpressionValidator" ControlToValidate="userName" ForeColor="Red" ValidationExpression="^[a-zA-Z0-9_]*$">* You must enter a valid user name</asp:RegularExpressionValidator>

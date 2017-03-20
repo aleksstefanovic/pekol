@@ -51,12 +51,42 @@ namespace Pekol
         {
             userName.Text = (string) Application["UserName"];
             password.Text = (string) Application["Password"];
-            address.Text = (string) Application["Address"];
-            postalCode.Text = (string) Application["PostalCode"];
-            creditCard.Text = ((int) Application["CreditCard"]).ToString();
-            cvv.Text = ((int) Application["CVV"]).ToString();
-            expiryDate.Text = (string) Application["ExpDate"];
-            phoneNumber.Text = (string) Application["PhoneNumber"];
+
+            try
+            {
+                address.Text = (string)Application["Address"];
+            }
+            catch(Exception ex) { }
+
+            try
+            {
+                postalCode.Text = (string)Application["PostalCode"];
+            }
+            catch(Exception ex) { }
+
+            try
+            {
+                creditCard.Text = ((int) Application["CreditCard"]).ToString();
+            }
+            catch(Exception ex) { }
+
+            try
+            {
+                cvv.Text = ((int) Application["CVV"]).ToString();
+            }
+            catch(Exception ex) { }
+
+            try
+            {
+                expiryDate.Text = (string) Application["ExpDate"];
+            }
+            catch(Exception ex) { }
+
+            try
+            {
+                phoneNumber.Text = (string) Application["PhoneNumber"];
+            }
+            catch(Exception ex) { }
         }
 
         public void logOutDiv ()
@@ -269,16 +299,8 @@ namespace Pekol
             bool created = this.CreateUserAccount(Login1.UserName, Login1.Password);
             if (created)
             {
-                bool authenticated = this.ValidateCredentials(Login1.UserName, Login1.Password);
-
-                if (authenticated)
-                {
-                    logInDiv();
-                }
-                else
-                {
-                    lblError.Text = "Invalid Credentials!";
-                }
+                AuthenticateEventArgs sample = new AuthenticateEventArgs();
+                this.Login1_Authenticate(sender, sample);
             }
         }
 

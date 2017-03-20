@@ -127,6 +127,7 @@
     <Content Include="styles\login.css" />
     <Content Include="styles\master.css" />
     <Content Include="styles\news.css" />
+    <Content Include="styles\shop.css" />
     <Content Include="Web.sitemap">
       <SubType>Designer</SubType>
     </Content>
