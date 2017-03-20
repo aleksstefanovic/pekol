@@ -14,18 +14,20 @@
             <li class="peckolText">If you are javaing and you're overriding the finalize method, you're javaing wrong.</li>
         </ul>
 
-        <div class="peckolHeader">
+        <%--<div class="peckolHeader">
             Peckol Code Test
         </div>
         <div class="peckolText">
-            This is our patented Pekol certified code analyzer tool. Just upload some code you have and we'll tell you whether Peckol will break your fingers or not!
+            This is our patented Pekol certified code analyzer tool. Just upload some C# code you have and we'll tell you whether Peckol will break your fingers or not!
         </div>
         <asp:RadioButtonList ID="languageList" runat="server" CssClass="radialButtons">
             <asp:ListItem Text="Javascript"></asp:ListItem>
             <asp:ListItem Text="C#"></asp:ListItem>
             <asp:ListItem Text="Java"></asp:ListItem>
         </asp:RadioButtonList>
-        <asp:FileUpload ID="codeUpload" runat="server" CssClass="fileUpload"/>
+        <asp:FileUpload ID="codeUpload" runat="server" CssClass="fileUpload" OnDataBinding="codeUpload_DataBinding" OnLoad="codeUpload_Load"/>
+        <br />
         <asp:Button ID="submitBtn" runat="server" Text="Submit" OnClick="submitBtn_Click" CssClass="codeButton"/>
+        <asp:Label ID="lblCodeContent" runat="server" Text=""></asp:Label>--%>
     </div>
 </asp:Content>
