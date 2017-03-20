@@ -43,7 +43,7 @@ html {
   -moz-box-shadow: 0.25vw 0.25vw 0 #8C41F4;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
-  margin:0vw 1vw 1vw 1vw;
+  margin:0vw 1vw 0vw 0vw;
 }
 
 .logOut:hover {
@@ -59,7 +59,11 @@ html {
     font-size:1vw;
     font-family:main;
     font-style:italic oblique;
-    margin:0.5vw 0vw 1vw 0vw;
+    margin:0.5vw 1vw 0vw 0vw;
+}
+
+#updatePanel {
+    float:right;
 }
 
 .section.header {

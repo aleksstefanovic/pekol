@@ -22,20 +22,31 @@ namespace Pekol
                 loggedIn = (bool) Application["LoggedIn"];
                 if(loggedIn)
                 {
-                    Login1.Visible = false;
-                    CreateUser.Visible = false;
+                    logInDiv();
                 }
                 else
                 {
-                    Login1.Visible = true;
-                    CreateUser.Visible = true;
+                    logOutDiv();
                 }
             }
             catch (Exception ex)
             {
-                Login1.Visible = true;
-                CreateUser.Visible = true;
+                logOutDiv();
             }
+        }
+
+        public void logInDiv ()
+        {
+            Login1.Visible = false;
+            CreateUser.Visible = false;
+            userPage.Visible = true;
+        }
+
+        public void logOutDiv ()
+        {
+            Login1.Visible = true;
+            CreateUser.Visible = true;
+            userPage.Visible = false;
         }
 
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
@@ -44,10 +55,8 @@ namespace Pekol
 
             if (authenticated)
             {
-                Login1.Visible = false;
-                CreateUser.Visible = false;
-                UpdatePanelLogin.Update();
-                //FormsAuthentication.RedirectFromLoginPage(Login1.UserName, Login1.RememberMeSet);
+                logInDiv();
+                Response.Redirect(Request.RawUrl);
             }
         }
 
@@ -158,10 +167,7 @@ namespace Pekol
 
                 if (authenticated)
                 {
-                    Login1.Visible = false;
-                    CreateUser.Visible = false;
-                    UpdatePanelLogin.Update();
-                    //FormsAuthentication.RedirectFromLoginPage(Login1.UserName, Login1.RememberMeSet);
+                    logInDiv();
                 }
             }
         }
