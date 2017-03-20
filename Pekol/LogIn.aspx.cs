@@ -28,6 +28,11 @@ namespace Pekol
                 {
                     logOutDiv();
                 }
+
+                if (!IsPostBack)
+                {
+                    syncUserCreds();
+                }
             }
             catch (Exception ex)
             {
@@ -42,6 +47,18 @@ namespace Pekol
             userPage.Visible = true;
         }
 
+        public void syncUserCreds ()
+        {
+            userName.Text = (string) Application["UserName"];
+            password.Text = (string) Application["Password"];
+            address.Text = (string) Application["Address"];
+            postalCode.Text = (string) Application["PostalCode"];
+            creditCard.Text = ((int) Application["CreditCard"]).ToString();
+            cvv.Text = ((int) Application["CVV"]).ToString();
+            expiryDate.Text = (string) Application["ExpDate"];
+            phoneNumber.Text = (string) Application["PhoneNumber"];
+        }
+
         public void logOutDiv ()
         {
             Login1.Visible = true;
@@ -49,8 +66,89 @@ namespace Pekol
             userPage.Visible = false;
         }
 
+        private bool isDuplicateUser (string userName)
+        {
+            bool isDuplicate = false;
+
+            SqlConnection conn = null;
+
+            try
+            {
+                string sql = "select count(*) from users where username = @username";
+
+                conn = new SqlConnection(ConfigurationManager.ConnectionStrings["pekolDB"].ConnectionString);
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                SqlParameter user = new SqlParameter();
+                user.ParameterName = "@username";
+                user.Value = userName.Trim();
+                cmd.Parameters.Add(user);
+
+                conn.Open();
+
+                int count = (int)cmd.ExecuteScalar();
+
+                if (count > 0)
+                {
+                    isDuplicate = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log your error
+            }
+            finally
+            {
+                if (conn != null) conn.Close();
+            }
+            return isDuplicate;
+        }
+
+        private void setCurrentUserCreds (string UserName, string Password)
+        {
+                SqlConnection conn = null;
+
+                try
+                {
+                    string sql = "SELECT * FROM Users WHERE UserName=@username";
+
+                    conn = new SqlConnection(ConfigurationManager.ConnectionStrings["pekolDB"].ConnectionString);
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+
+                    SqlParameter user = new SqlParameter();
+                    user.ParameterName = "@username";
+                    user.Value = UserName.Trim();
+                    cmd.Parameters.Add(user);
+
+                    conn.Open();
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        Application["UserName"] = reader[0];
+                        Application["Password"] = Password;
+                        Application["LoggedIn"] = true;
+                        Application["Address"] = reader[2];
+                        Application["PostalCode"] = reader[3];
+                        Application["CreditCard"] = reader[4];
+                        Application["CVV"] = reader[5];
+                        Application["ExpDate"] = reader[6];
+                        Application["PhoneNumber"] = reader[7];
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Log your error
+                }
+                finally
+                {
+                    if (conn != null) conn.Close();
+                }
+        }
+
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
+            lblError.Text = "";
             bool authenticated = this.ValidateCredentials(Login1.UserName, Login1.Password);
 
             if (authenticated)
@@ -96,9 +194,7 @@ namespace Pekol
 
                     if (count > 0)
                     {
-                        Application["UserName"] = userName;
-                        Application["Password"] = password;
-                        Application["LoggedIn"] = true;
+                        setCurrentUserCreds(userName, password);
                         returnValue = true;
                     }
                 }
@@ -125,41 +221,51 @@ namespace Pekol
             bool created = false;
             SqlConnection conn = null;
 
-            try
-            {
-                string sql = "INSERT INTO Users VALUES (@username, @password);";
+            bool isDuplicate = isDuplicateUser(userName);
+            if (!isDuplicate)
+            { 
 
-                conn = new SqlConnection(ConfigurationManager.ConnectionStrings["pekolDB"].ConnectionString);
-                SqlCommand cmd = new SqlCommand(sql, conn);
+                try
+                {
+                    string sql = "INSERT INTO Users (UserName, Password) VALUES (@username, @password);";
 
-                SqlParameter user = new SqlParameter();
-                user.ParameterName = "@username";
-                user.Value = userName.Trim();
-                cmd.Parameters.Add(user);
+                    conn = new SqlConnection(ConfigurationManager.ConnectionStrings["pekolDB"].ConnectionString);
+                    SqlCommand cmd = new SqlCommand(sql, conn);
 
-                SqlParameter pass = new SqlParameter();
-                pass.ParameterName = "@password";
-                pass.Value = Hasher.HashString(password.Trim());
-                cmd.Parameters.Add(pass);
+                    SqlParameter user = new SqlParameter();
+                    user.ParameterName = "@username";
+                    user.Value = userName.Trim();
+                    cmd.Parameters.Add(user);
 
-                conn.Open();
+                    SqlParameter pass = new SqlParameter();
+                    pass.ParameterName = "@password";
+                    pass.Value = Hasher.HashString(password.Trim());
+                    cmd.Parameters.Add(pass);
 
-                object count = cmd.ExecuteScalar();
-                created = true;
+                    conn.Open();
+
+                    object count = cmd.ExecuteScalar();
+                    created = true;
+                }
+                catch (Exception ex)
+                {
+                    // Log your error
+                }
+                finally
+                {
+                    if (conn != null) conn.Close();
+                }
             }
-            catch (Exception ex)
+            else 
             {
-                // Log your error
-            }
-            finally
-            {
-                if (conn != null) conn.Close();
+                lblError.Text = "Duplicate User!";
             }
             return created;
         }
 
         protected void CreateUser_Click(object sender, EventArgs e)
         {
+            lblError.Text = "";
             bool created = this.CreateUserAccount(Login1.UserName, Login1.Password);
             if (created)
             {
@@ -169,7 +275,96 @@ namespace Pekol
                 {
                     logInDiv();
                 }
+                else
+                {
+                    lblError.Text = "Invalid Credentials!";
+                }
             }
+        }
+
+        private void updateUserProfile(string oldUserName, string username, string Password, string Address, string PostalCode, string CreditCard, string CVV, string ExpDate, string PhoneNumber)
+        {
+            SqlConnection conn = null;
+            try
+            {
+                string sql = "UPDATE Users SET UserName=@username, Password=@password, Address=@address, PostalCode=@postalCode, CreditCard=@creditCard, CVV=@cvv, ExpiryDate=@expDate, PhoneNumber=@phoneNumber WHERE UserName=@oldUserName;";
+
+                conn = new SqlConnection(ConfigurationManager.ConnectionStrings["pekolDB"].ConnectionString);
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                SqlParameter oldUser = new SqlParameter();
+                oldUser.ParameterName = "@oldUserName";
+                oldUser.Value = oldUserName.Trim();
+                cmd.Parameters.Add(oldUser);
+
+                SqlParameter user = new SqlParameter();
+                user.ParameterName = "@username";
+                user.Value = username.Trim();
+                cmd.Parameters.Add(user);
+
+                SqlParameter pass = new SqlParameter();
+                pass.ParameterName = "@password";
+                pass.Value = Hasher.HashString(Password.Trim());
+                cmd.Parameters.Add(pass);
+
+                SqlParameter add = new SqlParameter();
+                add.ParameterName = "@address";
+                add.Value = Address;
+                cmd.Parameters.Add(add);
+
+                SqlParameter psCode = new SqlParameter();
+                psCode.ParameterName = "@postalCode";
+                psCode.Value = PostalCode;
+                cmd.Parameters.Add(psCode);
+
+                SqlParameter cCard = new SqlParameter();
+                cCard.ParameterName = "@creditCard";
+                cCard.Value = Convert.ToInt32(CreditCard);
+                cmd.Parameters.Add(cCard);
+
+                SqlParameter cvv = new SqlParameter();
+                cvv.ParameterName = "@cvv";
+                cvv.Value = Convert.ToInt32(CVV);
+                cmd.Parameters.Add(cvv);
+
+                SqlParameter expDate = new SqlParameter();
+                expDate.ParameterName = "@expDate";
+                expDate.Value = ExpDate;
+                cmd.Parameters.Add(expDate);
+
+                SqlParameter phoneNumber = new SqlParameter();
+                phoneNumber.ParameterName = "@phoneNumber";
+                phoneNumber.Value = PhoneNumber;
+                cmd.Parameters.Add(phoneNumber);
+
+                conn.Open();
+
+                object count = cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                lblError.Text = "Invalid data, could not update profile!";
+            }
+            finally
+            {
+                if (conn != null) conn.Close();
+            }
+        }
+
+        protected void saveUser_Click(object sender, EventArgs e)
+        {
+            string oldUserName = (string) Application["UserName"];
+            string username = userName.Text;
+            string Password = password.Text;
+            string Address = address.Text;
+            string PostalCode = postalCode.Text;
+            string CreditCard = creditCard.Text;
+            string CVV = cvv.Text;
+            string ExpDate = expiryDate.Text;
+            string PhoneNumber = phoneNumber.Text;
+            updateUserProfile(oldUserName, username, Password, Address, PostalCode, CreditCard, CVV, ExpDate, PhoneNumber);
+            setCurrentUserCreds(username, Password);
         }
     }
 }

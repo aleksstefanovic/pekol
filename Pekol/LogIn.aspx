@@ -4,6 +4,7 @@
     <div id="login" class="section">
         <asp:Login ID="Login1" runat="server" OnAuthenticate="Login1_Authenticate" ></asp:Login>
         <asp:Button ID="CreateUser" runat="server" Text="Create New User" CssClass="createUser" OnClick="CreateUser_Click"/>
+
         <div id="userPage" runat="server">
             <div id="title" class="peckolHeader">User Profile</div>
             <asp:Label ID="lblUserName" runat="server" Text="User Name:"></asp:Label>
@@ -35,7 +36,7 @@
             <asp:TextBox ID="expiryDate" runat="server" Text="" CssClass="inputText"></asp:TextBox>
             <br />
 
-            <asp:Button ID="saveUser" runat="server" Text="Save" />
+            <asp:Button ID="saveUser" runat="server" Text="Save" OnClick="saveUser_Click"/>
 
 
             <asp:RegularExpressionValidator ID="regexUserName" runat="server" ErrorMessage="RegularExpressionValidator" ControlToValidate="userName" ForeColor="Red" ValidationExpression="^[a-zA-Z0-9_]*$">* You must enter a valid user name</asp:RegularExpressionValidator>
@@ -51,5 +52,6 @@
             <asp:RegularExpressionValidator ID="regexCVV" runat="server" ErrorMessage="RegularExpressionValidator" ControlToValidate="cvv" ForeColor="Red" ValidationExpression="^[0-9]*$">* You must enter a valid CVV</asp:RegularExpressionValidator>
             <asp:RegularExpressionValidator ID="regexExpDate" runat="server" ErrorMessage="RegularExpressionValidator" ControlToValidate="expiryDate" ForeColor="Red" ValidationExpression="^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$">* You must enter a valid expiry date</asp:RegularExpressionValidator>
         </div>
+        <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
     </div>
 </asp:Content>
