@@ -1,0 +1,37 @@
+﻿#login {
+    height:75%;
+    color:#000000;
+}
+
+input {
+  color: #FFFFFF;
+  font-family:main;
+  background-color: #8C41F4;
+  font-size: 0.5vw;
+  text-decoration: none;
+  text-shadow: -0.5vw -0.5vw 0.5vw #616161;
+  position: relative;
+  padding: 0.5vw 1vw;
+  -webkit-box-shadow: 0.25vw 0.25vw 0 #8C41F4;
+  -moz-box-shadow: 0.25vw 0.25vw 0 #8C41F4;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  margin: 1vw 0.5vw 0.5vw 0.5vw
+}
+
+input:hover {
+      -webkit-box-shadow: 0px 0px 0 #8C41F4;
+      -moz-box-shadow: 0px 0px 0 #8C41F4;
+      top: 0.25vw;
+      left: 0.25vw;
+}
+
+.createUser {
+    margin-left: 14.5vw;
+}
+
+.linkStore {
+    color: #8C41F4;
+    margin:1vw 1vw 1vw 1vw;
+    font-size:2vw;
+}

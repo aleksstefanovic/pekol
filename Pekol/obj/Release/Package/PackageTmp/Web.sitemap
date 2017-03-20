@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="~/" title="Home"  description="Home Page">
+        <siteMapNode url="~/Default.aspx" title=""  description="Home Page" />
+        <siteMapNode url="~/AboutUs.aspx" title="About"  description="About" />
+        <siteMapNode url="~/CodingBestPractice.aspx" title="Tips/Strategies"  description="Coding Best Practices" />
+        <siteMapNode url="~/News.aspx" title="News"  description="The latest Peckol News" />
+        <siteMapNode url="~/Shop.aspx" title="Shop"  description="Shop for Anti-Peckol Items" />
+        <siteMapNode url="~/ContactUs.aspx" title="Contact Us"  description="PPP Contact Info" />
+        <siteMapNode url="~/LogIn.aspx" title="Login"  description="Login" />
+    </siteMapNode>
+</siteMap>

@@ -103,6 +103,10 @@
     <Content Include="CodingBestPractice.aspx" />
     <Content Include="ContactUs.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="images\coffee.jpg" />
+    <Content Include="images\csharp.jpg" />
+    <Content Include="images\gloves.png" />
     <Content Include="images\peckol.jpg" />
     <Content Include="images\pekelSexyTemp.jpg" />
     <Content Include="LogIn.aspx" />
@@ -114,6 +118,8 @@
     <Content Include="Shop.aspx" />
     <Content Include="Site.Master" />
     <Content Include="fonts\neuropol.ttf" />
+    <None Include="Properties\PublishProfiles\peckolpreventionproject - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\peckolpreventionproject - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

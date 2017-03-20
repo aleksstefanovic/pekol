@@ -1,0 +1,49 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Pekol.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link rel="stylesheet" href="styles/master.css" type="text/css" />
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" />
+    <title>The Peckol Prevention Project</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <div id="header" class="section header">
+        The Peckol Prevention Project
+        <div id="updatePanel">
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <asp:Button ID="LogOut" runat="server" Text="Log Out" CssClass="logOut" OnClick="LogOut_Click"/>
+                    <div id="userLabel" runat="server"></div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+    </div>
+    <asp:AdRotator ID="AdRotator" runat="server" AdvertisementFile="~/App_Data/ads.xml" CssClass="ads"/>
+    <asp:Menu runat="server" Orientation="Horizontal" CssClass="nav">
+        <LevelMenuItemStyles>
+            <asp:MenuItemStyle CssClass="navItems" />
+        </LevelMenuItemStyles>
+        <Items>
+            <asp:MenuItem Text="Home | " Value="Home" NavigateUrl="~/Default.aspx"></asp:MenuItem>
+            <asp:MenuItem Text="About | " Value="About" NavigateUrl="~/AboutUs.aspx"></asp:MenuItem>
+            <asp:MenuItem Text="Tips/Strategies | " Value="Coding Best Practices" NavigateUrl="~/CodingBestPractice.aspx"></asp:MenuItem>
+            <asp:MenuItem Text="News | " Value="News" NavigateUrl="~/News.aspx"></asp:MenuItem>
+            <asp:MenuItem Text="Login" Value="Login" NavigateUrl="~/LogIn.aspx"></asp:MenuItem>
+        </Items>
+    </asp:Menu>
+    <div class="breadcrumb">
+        <asp:SiteMapPath ID="SiteMapPath" runat="server"></asp:SiteMapPath>
+    </div>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <div id="footer" class="section footer">
+        Copyright © The Peckol Prevention Project
+    </div>
+    </form>
+</body>
+</html>
