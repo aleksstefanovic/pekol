@@ -1,5 +1,5 @@
 ﻿#login {
-    height:75%;
+    height:80%;
     color:#000000;
 }
 
@@ -34,4 +34,15 @@ input:hover {
     color: #8C41F4;
     margin:1vw 1vw 1vw 1vw;
     font-size:2vw;
+}
+
+.left {
+    width: 40%;
+    float: left;
+    text-align: right;
+}
+.right {
+    width: 40%;
+    margin-left: 10px;
+    float:left;
 }

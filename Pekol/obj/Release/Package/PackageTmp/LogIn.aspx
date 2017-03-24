@@ -7,36 +7,80 @@
 
         <div id="userPage" runat="server">
             <div id="title" class="peckolHeader">User Profile</div>
-            <asp:Label ID="lblUserName" runat="server" Text="User Name:"></asp:Label>
-            <asp:TextBox ID="userName" runat="server" Text="" CssClass="inputText"></asp:TextBox>
+
+            <div>
+            <div class="left">
+                <asp:Label ID="lblUserName" runat="server" Text="User Name:"></asp:Label>
+            </div>
+            <div class="right">
+                <asp:TextBox ID="userName" runat="server" Text="" CssClass="inputText"></asp:TextBox>
+            </div>
+            </div>
+
+            <div>
+            <div class="left">
+                <asp:Label ID="lblPassword" runat="server" Text="Password:"></asp:Label>
+            </div>
+            <div class="right">
+                <asp:TextBox ID="password" runat="server" Text="" CssClass="inputText"></asp:TextBox>
+            </div>
+            </div>
+
+            <div>
+            <div class="left">
+                <asp:Label ID="lblAddress" runat="server" Text="Address:"></asp:Label>
+            </div>
+            <div class="right">
+                <asp:TextBox ID="address" runat="server" Text="" CssClass="inputText"></asp:TextBox>
+            </div>
+            </div>
+
+            <div>
+            <div class="left">
+                <asp:Label ID="lblPostalCode" runat="server" Text="Postal Code:"></asp:Label>
+            </div>
+            <div class="right">
+                <asp:TextBox ID="postalCode" runat="server" Text="" CssClass="inputText"></asp:TextBox>
+            </div>
+            </div>
+
+            <div>
+            <div class="left">
+                <asp:Label ID="lblPhoneNumber" runat="server" Text="Phone Number:"></asp:Label>
+            </div>
+            <div class="right">
+                <asp:TextBox ID="phoneNumber" runat="server" Text="" CssClass="inputText"></asp:TextBox>
+            </div>
+            </div>
+
+            <div>
+            <div class="left">
+                <asp:Label ID="lblCreditCard" runat="server" Text="Credit Card Number:"></asp:Label>
+            </div>
+            <div class="right">
+                <asp:TextBox ID="creditCard" runat="server" Text="" CssClass="inputText"></asp:TextBox>
+            </div>
+            </div>
+
+            <div>
+            <div class="left">
+                <asp:Label ID="lblCVV" runat="server" Text="CVV:"></asp:Label>
+            </div>
+            <div class="right">
+                <asp:TextBox ID="cvv" runat="server" Text="" CssClass="inputText"></asp:TextBox>
+            </div>
+            </div>
+
+            <div>
+            <div class="left">
+                <asp:Label ID="lblExpDate" runat="server" Text="Expiry Date:"></asp:Label>
+            </div>
+            <div class="right">
+                <asp:TextBox ID="expiryDate" runat="server" Text="" CssClass="inputText"></asp:TextBox>
+            </div>
+            </div>
             <br />
-
-            <asp:Label ID="lblPassword" runat="server" Text="Password:"></asp:Label>
-            <asp:TextBox ID="password" runat="server" Text="" CssClass="inputText"></asp:TextBox>
-            <br />
-
-            <asp:Label ID="lblAddress" runat="server" Text="Address:"></asp:Label>
-            <asp:TextBox ID="address" runat="server" Text="" CssClass="inputText"></asp:TextBox>
-
-            <asp:Label ID="lblPostalCode" runat="server" Text="Postal Code:"></asp:Label>
-            <asp:TextBox ID="postalCode" runat="server" Text="" CssClass="inputText"></asp:TextBox>
-            <br />
-
-            <asp:Label ID="lblPhoneNumber" runat="server" Text="Phone Number:"></asp:Label>
-            <asp:TextBox ID="phoneNumber" runat="server" Text="" CssClass="inputText"></asp:TextBox>
-            <br />
-
-            <asp:Label ID="lblCreditCard" runat="server" Text="Credit Card Number:"></asp:Label>
-            <asp:TextBox ID="creditCard" runat="server" Text="" CssClass="inputText"></asp:TextBox>
-
-            <asp:Label ID="lblCVV" runat="server" Text="CVV:"></asp:Label>
-            <asp:TextBox ID="cvv" runat="server" Text="" CssClass="inputText"></asp:TextBox>
-
-            <asp:Label ID="lblExpDate" runat="server" Text="Expiry Date:"></asp:Label>
-            <asp:TextBox ID="expiryDate" runat="server" Text="" CssClass="inputText"></asp:TextBox>
-            <br />
-
-            <asp:Button ID="saveUser" runat="server" Text="Save" OnClick="saveUser_Click"/>
+            <asp:Button ID="saveUser" runat="server" Text="Save" OnClick="saveUser_Click" CssClass="saveButton"/>
             <br />
             <br />
 
