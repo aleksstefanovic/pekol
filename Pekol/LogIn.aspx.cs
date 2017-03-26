@@ -87,6 +87,12 @@ namespace Pekol
                 phoneNumber.Text = (string) Application["PhoneNumber"];
             }
             catch(Exception ex) { }
+
+            try
+            {
+                email.Text = (string) Application["Email"];
+            }
+            catch(Exception ex) { }
         }
 
         public void logOutDiv ()
@@ -164,6 +170,7 @@ namespace Pekol
                         Application["CVV"] = reader[5];
                         Application["ExpDate"] = reader[6];
                         Application["PhoneNumber"] = reader[7];
+                        Application["Email"] = reader[8];
                     }
                 }
                 catch (Exception ex)
@@ -304,12 +311,13 @@ namespace Pekol
             }
         }
 
-        private void updateUserProfile(string oldUserName, string username, string Password, string Address, string PostalCode, string CreditCard, string CVV, string ExpDate, string PhoneNumber)
+        private void updateUserProfile(string oldUserName, string username, string Password, string Address, string PostalCode, string CreditCard, string CVV, string ExpDate, string PhoneNumber, string Email)
         {
             SqlConnection conn = null;
             try
             {
-                string sql = "UPDATE Users SET UserName=@username, Password=@password, Address=@address, PostalCode=@postalCode, CreditCard=@creditCard, CVV=@cvv, ExpiryDate=@expDate, PhoneNumber=@phoneNumber WHERE UserName=@oldUserName;";
+                string sql = "UPDATE Users SET UserName=@username, Password=@password, Address=@address, PostalCode=@postalCode, CreditCard=@creditCard, CVV=@cvv, ExpiryDate=@expDate, PhoneNumber=@phoneNumber, Email=@email WHERE UserName=@oldUserName;";
+
 
                 conn = new SqlConnection(ConfigurationManager.ConnectionStrings["pekolDB"].ConnectionString);
 
@@ -360,6 +368,11 @@ namespace Pekol
                 phoneNumber.Value = PhoneNumber;
                 cmd.Parameters.Add(phoneNumber);
 
+                SqlParameter email = new SqlParameter();
+                email.ParameterName = "@email";
+                email.Value = Email;
+                cmd.Parameters.Add(email);
+
                 conn.Open();
 
                 object count = cmd.ExecuteScalar();
@@ -385,7 +398,8 @@ namespace Pekol
             string CVV = cvv.Text;
             string ExpDate = expiryDate.Text;
             string PhoneNumber = phoneNumber.Text;
-            updateUserProfile(oldUserName, username, Password, Address, PostalCode, CreditCard, CVV, ExpDate, PhoneNumber);
+            string Email = email.Text;
+            updateUserProfile(oldUserName, username, Password, Address, PostalCode, CreditCard, CVV, ExpDate, PhoneNumber, Email);
             setCurrentUserCreds(username, Password);
         }
     }

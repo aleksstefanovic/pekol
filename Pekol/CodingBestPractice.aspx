@@ -8,11 +8,23 @@
         <div class="peckolText">
             Often the best way to prevent an unfortunate encounter with Doctor Peckol is to follow best coding practice. Here are the most important ones to follow.
         </div>
-        <ul id="tips">
-            <li class="peckolText">All because a variable is "Goatblower" doesn't mean you should name it "Goatblower". Name it something that represents what its used for!</li>
-            <li class="peckolText">Don't cast, don't do it. There's libraries that do it better. Don't cast.</li>
-            <li class="peckolText">If you are javaing and you're overriding the finalize method, you're javaing wrong.</li>
-        </ul>
+    <asp:UpdatePanel ID="UpdatePanelTable" runat="server" UpdateMode="Conditional">
+        <ContentTemplate>
+              <asp:GridView ID="grdTips" runat="server" AutoGenerateColumns="False" DataKeyNames="Tip" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" PageSize="5" CssClass="tipsTable">
+                <Columns>
+                    <asp:BoundField DataField="Tip" ReadOnly="True"/>
+                </Columns>
+            </asp:GridView>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:pekolDB %>" SelectCommand="SELECT * FROM [Tips]"></asp:SqlDataSource>
+
+    <div id="addTip" runat="server">
+        <asp:Label ID="lblTip" runat="server" Text="Add Tip:"></asp:Label>
+        <asp:TextBox ID="tip" runat="server" Text="" CssClass="inputText"></asp:TextBox>
+        <asp:Button ID="saveTip" runat="server" Text="Submit" CssClass="tipButton" OnClick="saveTip_Click"/>
+    </div>
+
 
         <%--<div class="peckolHeader">
             Peckol Code Test

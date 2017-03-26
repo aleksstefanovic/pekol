@@ -5,7 +5,7 @@
         <div id="title" class="peckolHeader">Store</div>
 
         <div id="defensiveGloves" class="peckolHeader">Defensive Gloves</div>
-        <div class="peckolText">These special gloves made out of a extremely durable super nano-carbon material are almost indestructable! If you're determined to do bad code practice, but don't your fingers broken, this the product for you!</div>
+        <div class="peckolText">These special gloves made out of a extremely durable super nano-carbon material are almost indestructable! If you're determined to do bad code practice, but don't want your fingers broken, this the product for you!</div>
         <asp:Button ID="addGloves" runat="server" Text="Add to Cart" CssClass="shopButton" OnClick="addGloves_Click"/>
 
         <div id="peckolPreventionHandbook" class="peckolHeader">Peckol Prevention Handbook</div>

@@ -28,6 +28,15 @@
 
             <div>
             <div class="left">
+                <asp:Label ID="lblEmail" runat="server" Text="Email:"></asp:Label>
+            </div>
+            <div class="right">
+                <asp:TextBox ID="email" runat="server" Text="" CssClass="inputText"></asp:TextBox>
+            </div>
+            </div>
+
+            <div>
+            <div class="left">
                 <asp:Label ID="lblAddress" runat="server" Text="Address:"></asp:Label>
             </div>
             <div class="right">
@@ -99,6 +108,7 @@
             <asp:RegularExpressionValidator ID="regexCreditCard" runat="server" ErrorMessage="RegularExpressionValidator" ControlToValidate="creditCard" ForeColor="Red" ValidationExpression="^[0-9]*$">* You must enter a valid credit card</asp:RegularExpressionValidator>
             <asp:RegularExpressionValidator ID="regexCVV" runat="server" ErrorMessage="RegularExpressionValidator" ControlToValidate="cvv" ForeColor="Red" ValidationExpression="^[0-9]*$">* You must enter a valid CVV</asp:RegularExpressionValidator>
             <asp:RegularExpressionValidator ID="regexExpDate" runat="server" ErrorMessage="RegularExpressionValidator" ControlToValidate="expiryDate" ForeColor="Red" ValidationExpression="^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$">* You must enter a valid expiry date</asp:RegularExpressionValidator>
+            <asp:RegularExpressionValidator ID="regexEmail" runat="server" ErrorMessage="RegularExpressionValidator" ControlToValidate="email" ForeColor="Red" ValidationExpression="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$">* You must enter a valid email</asp:RegularExpressionValidator>
         </div>
         <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
     </div>

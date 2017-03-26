@@ -16,7 +16,7 @@
                 <div class="peckolText">If you wish to learn more about us or about Doctor Peckol, please visit the About page.</div>
                 <div class="peckolText">All our tips/strategies for preventing and surviving Peckol attacks are under Tips/Strategies</div>
                 <div class="peckolText">If you are looking for the latest Peckol news, visit the News page.</div>
-                <div class="peckolText">Finally, feel free to make an account which will give you access to exclusive Peckol info and our store, full of Peckol merchandise and saftey equipment.</div>
+                <div class="peckolText">Finally, feel free to make an account which will give you access to submit Peckol Prevention Tips to our repository and our store, full of Peckol merchandise and saftey equipment.</div>
 
             </div>
             <div class="peckolHeader">
